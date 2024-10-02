@@ -40,8 +40,7 @@ export class QuestionService {
   async getCurrentCycle(region) {
     const currentDate = new Date();
     return await this.cycleRepository.findOne({
-      where: { region, startTime: LessThanOrEqual(currentDate) },
-      order: { startTime: "DESC" },
+      where: { region, startTime: LessThanOrEqual(currentDate) }
     });
   }
 
